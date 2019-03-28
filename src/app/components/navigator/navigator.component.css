@@ -1,0 +1,11 @@
+img {
+    width: 70px;
+    height: auto;
+  }
+  #outer {
+    text-align: center;
+  }
+  
+  #inner {
+    display: inline-block;
+  }

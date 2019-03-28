@@ -1,0 +1,19 @@
+<div>
+
+  <hr>
+
+  <div class="box2" *ngFor="let course of courses; let i = index" (click)="showCourse(i)">
+
+    <app-single-course-image class="single-course-image" [imageName]=course.name></app-single-course-image>
+
+  </div>
+
+  <hr>
+  <div class="single-course">
+    <div *ngIf="course">
+      <app-single-course [course]=course  [imageName]=course.name></app-single-course>
+    </div>
+  </div>
+
+
+</div>

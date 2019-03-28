@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/main">
+    <img id="inner" src="assets/img/crazy_logo.png">
+    <span class="text-warning"> Code Bakers</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <a class="nav-link" routerLink="/main">Pagrindinis </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/courses">Visi Kursai</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">Apie Mus</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contacts">Kontaktai</a>
+      </li>
+
+      <div *ngxPermissionsOnly="['ROLE_ADMIN']">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/users">Vartotojai</a>
+        </li>
+      </div>
+
+
+
+      <li class="nav-item" *ngIf="!(isLoggedIn | async)">
+        <a class="nav-link" routerLink="/login">Prisijungti</a>
+      </li>
+      <li class="nav-item" *ngIf="(isLoggedIn | async)" (click)="authenticationService.logout()">
+        <a class="nav-link" routerLink="/login">Atsijungti</a>
+      </li>
+      <li class="nav-item" *ngIf="!(isLoggedIn | async)">
+        <a class="nav-link" routerLink="/register">Registruotis</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>

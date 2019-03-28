@@ -1,0 +1,15 @@
+img{
+    width: 100%;
+    }
+.imageBlock{
+    width: 30%;
+    height:250px;
+    float: left;
+}
+.floatLeft{
+    float: left;
+}
+.courseContent{
+    height: 100%;
+    width: 100%;
+}

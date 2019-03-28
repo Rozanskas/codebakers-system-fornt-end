@@ -1,0 +1,14 @@
+.inline { float:left; }
+.btn-3d {
+    background-color: cadetblue;
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    padding: 15px 40px;
+    color: white;
+    margin: 0px 4px 4px;
+    border-radius: 6px;
+    text-align: center;
+    transition: top .01s linear;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}

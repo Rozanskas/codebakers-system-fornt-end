@@ -1,0 +1,37 @@
+<div>
+
+  <table border="1" class="table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Id in DB</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Username</th>
+        <th>Created at</th>
+        <th>Type of subsription</th>
+        <th>Is disabled</th>
+        <th>Enable/Disable</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.roles[0].name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.createdAt}}</td>
+        <td></td>
+        <td *ngIf="user.is_disabled == 0" >No</td>
+        <td *ngIf="user.is_disabled == 1" bgcolor="red">Yes</td>
+        <td><button (click)="disable(user.id,i)" class="buttonDisable" *ngIf="user.is_disabled == 0">Disable</button>
+          <button (click)="enable(user.id,i)" class="buttonEnable" *ngIf="user.is_disabled == 1">Enable</button>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

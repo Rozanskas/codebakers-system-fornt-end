@@ -1,0 +1,10 @@
+.buttonEnable {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; 
+  }
+  .buttonDisable {
+    background-color: white;
+    color: black;
+    border: 2px solid #f44336; 
+  }

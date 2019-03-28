@@ -1,0 +1,13 @@
+
+img {
+    width: 300px;
+    height: auto;
+  }
+  #outer {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  #inner {
+    display: inline-block;
+  }
