@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Course } from 'src/app/model/course';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { CourseComponent } from '../course/course.component';
 
 @Component({
@@ -11,17 +11,20 @@ import { CourseComponent } from '../course/course.component';
 export class SingleCourseComponent implements OnInit {
 
   clickedImagename: Observable<string>;
+  clickedCourse: Observable<Course>;
   @Input() course: Course;
   @Input() imageName: string;
   name: string;
   clickedmenuName:string;
+  
 
   constructor(private courseComponent: CourseComponent) {
     this.clickedImagename = courseComponent.imageName();
+    this.clickedCourse = courseComponent.courseClicked;
     this.clickedImagename.subscribe(name => {
       this.name = "assets\/img\/" + name + ".png";
     });
-
+    this.clickedCourse.subscribe((course:Course)=>{this.course=course});
   }
 
   ngOnInit() {

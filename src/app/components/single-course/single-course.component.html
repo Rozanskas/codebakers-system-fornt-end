@@ -6,13 +6,14 @@
   <p> Description : {{ course.description }}</p>
   <p> Rating : {{ course.rating }}</p>
 </div>
-<div *ngxPermissionsOnly="['ROLE_USER','ROLE_ADMIN']">
+<div >
   <app-single-course-meniu (meniuChanged)="meniuChangedhandler($event)"></app-single-course-meniu>
-  <div class="courseContent floatLeft">
-    <div *ngIf="clickedmenuName=='home'"><app-course-home ></app-course-home></div>
+  <div style="background-color: red"  class="courseContent floatLeft">
+    <div *ngIf="clickedmenuName=='home'"><app-course-home class="container" [course]=course></app-course-home></div>
     <div *ngIf="clickedmenuName=='activity'"><app-course-activity ></app-course-activity></div>
     <div *ngIf="clickedmenuName=='drive'"><app-course-drive ></app-course-drive></div>
     <div *ngIf="clickedmenuName=='events'"><app-course-events ></app-course-events></div>
     <div *ngIf="clickedmenuName=='members'"><app-course-members></app-course-members></div>
   </div>
 </div>
+<!-- *ngxPermissionsOnly="['ROLE_USER','ROLE_ADMIN']" -->

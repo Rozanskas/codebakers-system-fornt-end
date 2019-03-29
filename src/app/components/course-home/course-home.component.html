@@ -1,3 +1,10 @@
-<p>
-  course-home works!
-</p>
+<div class="textareadiv" height="100%">
+  <button (click)="rowsAdd1()">Rows +1</button> <button (click)="rowsMinus1()">Rows -1</button>
+  <button (click)="columnsPlus1()">Columns +1</button> <button (click)="columnsMinus1()">Columns -1</button>
+  <p></p>
+  <button class="btn-success" (click)="submit(textarea)">Submit New Text Area Content</button>
+  <textarea  #textarea rows = "{{rows}}" cols="{{columns}}" name="textarea" style=" max-width: none;">
+    {{textAreaText}}
+    </textarea>
+
+</div>
